@@ -2,10 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {
+  BrowserRouter as Router,
+  withRouter
+} from "react-router-dom";
 
+class Root extends React.Component {
+ 
+  render() {
+    return (
+     <App/>
+    );
+  }
+}
+const RootwithAuth = withRouter(Root);
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <RootwithAuth />
+  </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
