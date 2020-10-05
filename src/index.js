@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Firebase, { FirebaseContext } from './firebase';
 import * as serviceWorker from './serviceWorker';
 import {
   BrowserRouter as Router,
@@ -11,7 +12,9 @@ class Root extends React.Component {
  
   render() {
     return (
+      <FirebaseContext.Provider value={new Firebase()}>
      <App/>
+     </FirebaseContext.Provider>
     );
   }
 }
