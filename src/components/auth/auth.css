@@ -1,0 +1,10 @@
+.paper {
+    margin: auto;
+    margin-top: 100px;
+    max-width: 500px;
+    padding: 32px;
+}
+.input{
+    margin-bottom: 12px !important;
+    width: 70%;
+}
