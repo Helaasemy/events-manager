@@ -18,8 +18,6 @@ class Firebase {
         if (!app.apps.length) {
             app.initializeApp(config);
         }
-     
-
       this.auth = app.auth();
     }
 
@@ -36,6 +34,13 @@ class Firebase {
 
     doPasswordUpdate = password =>
         this.auth.currentUser.updatePassword(password);
+
+    doAddUserToDataBase =  (email, username) => 
+        this.auth.database().ref('users/').set({
+            username: username,
+            email: email,
+          });
+
 
 }
   
